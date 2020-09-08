@@ -1,0 +1,6 @@
+.idea
+venv
+venv3.8
+*.zip
+*.tar.gz
+*.opendb
