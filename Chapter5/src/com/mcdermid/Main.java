@@ -1,6 +1,7 @@
 package com.mcdermid;
 
 /**
+ * @author Connor McDermid
  * Name: Connor McDermid
  * Lab: Chapter 5
  * Requirements: Exercise P5.1.

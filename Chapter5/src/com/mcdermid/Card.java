@@ -18,7 +18,7 @@ public class Card {
     }
 
     /**
-     * A static method constructing a Card from user input. Expected in the format <code><value><suit></code>
+     * A static method constructing a Card from user input. Expected in the format :value::suit:
      * @param usr A {@link String} containing the raw user input
      * @return A {@link Card} encoding the card specified by the user.
      */
