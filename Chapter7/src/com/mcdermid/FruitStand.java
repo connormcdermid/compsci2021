@@ -21,7 +21,7 @@ public class FruitStand {
             System.out.println("Fruit Name: ");
             tmpname = input.nextLine();
             System.out.println("Fruit Quantity: ");
-            tmpquant = input.nextInt(); //FIXME: Buffer problems
+            tmpquant = Integer.parseInt(input.nextLine());
             basket.add(new Fruit(tmpname, tmpquant));
 
             System.out.println("Done? [Y|n]"); //capital y to indicate default yes
