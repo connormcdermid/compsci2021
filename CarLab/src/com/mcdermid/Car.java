@@ -1,5 +1,9 @@
 package com.mcdermid;
 
+/**
+ * Author: Connor McDermid
+ * Lab: CarLab
+ */
 public class Car {
     private int mileage;
     private int oilTracker;
