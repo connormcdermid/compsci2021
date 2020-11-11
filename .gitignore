@@ -6,3 +6,4 @@ venv3.8
 *.opendb
 documentation/
 out/
+*.iml
