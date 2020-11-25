@@ -21,4 +21,5 @@ public class HourlyEmployee extends Employee {
     public double getAnnualSalary() {
         return hourlyRate * hoursPerWeek * 52;
     }
+
 }

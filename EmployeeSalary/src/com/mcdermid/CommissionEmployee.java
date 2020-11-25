@@ -19,6 +19,6 @@ public class CommissionEmployee extends SalariedEmployee {
     }
 
     public double getAnnualSalary() {
-        return super.getAnnualSalary() + (salesTotal / salesCommission);
+        return super.getAnnualSalary() + Math.round(salesTotal / salesCommission);
     }
 }

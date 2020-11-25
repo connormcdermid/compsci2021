@@ -18,6 +18,6 @@ public class SalariedEmployee extends Employee {
     }
 
     public double getAnnualSalary() {
-        return salary;
+        return this.salary;
     }
 }

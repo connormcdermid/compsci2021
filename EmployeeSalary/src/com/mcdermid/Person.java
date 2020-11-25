@@ -1,6 +1,6 @@
 package com.mcdermid;
 
-public class Person {
+public abstract class Person {
 
     private String firstname;
     private String lastname;
@@ -10,5 +10,15 @@ public class Person {
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthdate = birthdate;
+    }
+
+    public String getFirstname() {
+        return this.firstname;
+    }
+    public String getLastname() {
+        return this.lastname;
+    }
+    public String getBirthdate() {
+        return this.birthdate;
     }
 }
