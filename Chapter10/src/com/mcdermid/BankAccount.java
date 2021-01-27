@@ -76,7 +76,7 @@ public class BankAccount
 	/**
 	 * Withdraws an amount from the account
 	 * @param amount amount withdrawn
-	 * @throws IllegalArgmentException if amount is greater than balance
+	 * @throws IllegalArgumentException if amount is greater than balance
 	 */
 	public void withdraw(double amount)
 	{

@@ -58,6 +58,8 @@ public class Main {
             I am not entirely sure why, earlier in the code, I'm able to use instanceof to check whether or not
             a BankAccount is a SavingsAccount, and why that does *not* throw a compile-time error --
             according to this logic, it should.
+
+            I am also not entirely sure why Oracle isn't OK with it just always evaluating to false.
          */
 
         
