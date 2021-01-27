@@ -90,6 +90,15 @@ public class BankAccount
 		}
 	}
 
+	public void transfer(double amt, BankAccount acct) {
+		try {
+			this.withdraw(amt);
+		} catch (IllegalArgumentException e) {
+			System.out.println("Unfortunately, you don't have enough money to transfer that amount.");
+		}
+		acct.deposit(amt);
+	}
+
 	@Override
 	public String toString() {
 		return "BankAccount{" +

@@ -10,6 +10,11 @@ public class CheckingAccount extends BankAccount {
         this.TRANSACTION_FEE = fee;
     }
 
+    public CheckingAccount(String name, double amount) {
+        super(name, amount);
+        this.TRANSACTION_FEE = 3d; //I have no context to tell me whether or not this number is unreasonable
+    }
+
     public void deposit(double amount) {
         super.deposit(amount);
         transactionCount++;
