@@ -91,4 +91,34 @@ public class Sorter<T> {
             arr[i] = temp;
         }
     }
+
+    public static void selectionSort(double[] arr) {
+        int length = arr.length; // fetch array length
+        for (int i = 0; i < length - 1; i++) {
+            int min = i;
+            for (int j = i - 1; j < length; j++) {
+                if (arr[j] < arr[min]) {
+                    min = j;
+                }
+            }
+            double tmp = arr[min];
+            arr[min] = arr[i];
+            arr[i] = tmp;
+        }
+    }
+
+    public static void selectionSort(float[] arr) {
+        int length = arr.length; // fetch array length
+        for (int i = 0; i < length - 1; i++) {
+            int min = i;
+            for (int j = i - 1; j < length; j++) {
+                if (arr[j] < arr[min]) {
+                    min = j;
+                }
+            }
+            float tmp = arr[min];
+            arr[min] = arr[i];
+            arr[i] = tmp;
+        }
+    }
 }
