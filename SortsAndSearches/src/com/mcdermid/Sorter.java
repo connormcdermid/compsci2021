@@ -121,4 +121,8 @@ public class Sorter<T> {
             arr[i] = tmp;
         }
     }
+
+    public static void mergeSort(int[] arr) {
+        //TODO: add mergeSorts for all primitives, Strings, and custom objects
+    }
 }
