@@ -60,7 +60,7 @@ public class Sorter<T> {
         int  length= arr.length; // fetch array length
         for (int i = 0; i < length - 1; i++) {
             int min = i; // default minimum value is first value
-            for (int j = i + 1; j < n; j++) {
+            for (int j = i + 1; j < length; j++) {
                 if (arr[j] < arr[min]) {
                     min = j; // if the current value is lower than the minimum value, reassign minimum value
                 }
