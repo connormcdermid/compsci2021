@@ -1,5 +1,6 @@
 package com.mcdermid;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 /**
@@ -122,7 +123,123 @@ public class Sorter<T> {
         }
     }
 
-    public static void mergeSort(int[] arr) {
-        //TODO: add mergeSorts for all primitives, Strings, and custom objects
+    @SuppressWarnings("unchecked")
+    public static void merge(Object[] arr, int l, int m, int r, Comparator comparator) {
+        // Find sizes of two subarrays to be merged
+        int len1 = m - l + 1;
+        int len2 = r - m;
+
+        //create temporary arrays
+        //no generic arrays in java *sigh*, so Objects it is.
+        //because I am not writing this method more than once.
+        //regarding all the unchecked casts, I can guarantee these arrays will be of type T.
+        Object[] L = new Object[len1];
+        Object[] R = new Object[len2];
+
+        //copy data
+        for (int i = 0; i < len1; ++i)
+            L[i] = arr[l + i];
+        for (int j = 0; j < len2; ++j)
+            R[j] = arr[m + 1 + j];
+
+        //begin merge
+
+        // initial indices
+        int i = 0, j = 0;
+
+        // initial indices of merged array
+        int k = l;
+        while (i < len1 && j < len2) {
+            if (comparator.compare(L[i], R[j]) < 0) { //yeah, yeah, unchecked casts, I get it.
+                arr[k] = L[i];
+                i++;
+            }
+            else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        // copy remaining elements
+        while (i < len1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        // copy remaining elements
+        while (j < len2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
+    public static void sort(int[] arr, int l, int r) {
+        if (l < r) {
+            int mid = l + (r - 1) / 2;
+
+            sort(arr, l, mid);
+            sort(arr, mid + 1, r);
+
+            //yes, I realise I've written myself into what's probably a little extra work, but it's good practice,
+            //no?
+            // conversion oneliner from https://stackoverflow.com/a/27043087/7327253
+            merge(Arrays.stream(arr).boxed().toArray(Integer[]::new), l, mid, r, new Comparator<Integer>() {
+                public int compare(Integer a, Integer b) {
+                    return a.compareTo(b);
+                }
+            });
+        }
+    }
+
+    public static void sort(char[] arr, int l, int r) {
+        if (l < r) {
+            int mid = l + (r - 1) / 2;
+
+            sort(arr, l, mid);
+            sort(arr, mid + 1, r);
+
+            // conversion oneliner from https://stackoverflow.com/a/27690990/7327253
+            merge(arr.toString().chars().mapToObj(c -> (char)c).toArray(Character[]::new),
+                    l, mid, r, new Comparator<Character>() {
+                public int compare(Character a, Character b) {
+                    return a.compareTo(b);
+                }
+            });
+        }
+    }
+
+    public static void sort(double[] arr, int l, int r) {
+        if (l < r) {
+            int mid = l + (r - 1) / 2;
+
+            sort(arr, l, mid);
+            sort(arr, mid + 1, r);
+
+
+            merge(Arrays.stream(arr).boxed().toArray(Double[]::new), l, mid, r, new Comparator<Double>() {
+                public int compare(Double a, Double b) {
+                    return a.compareTo(b);
+                }
+            });
+        }
+    }
+
+    public static void sort(String[] arr, int l, int r) {
+        if (l < r) {
+            int mid = l + (r - 1) / 2;
+
+            sort(arr, l, mid);
+            sort(arr, mid + 1, r);
+
+            //so much simpler because it's already an Object
+            merge(arr, l, mid, r, new Comparator<String> () {
+                public int compare(String a, String b) {
+                    return a.compareTo(b);
+                }
+            });
+        }
     }
 }
