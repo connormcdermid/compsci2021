@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * A wrapper for several sorting algorithms, notably Selection Sort, Merge Sort, and Quicksort.
+ * A wrapper for several sorting algorithms, notably Selection Sort, and merge sort.
  */
 public class Sorter<T> {
 
