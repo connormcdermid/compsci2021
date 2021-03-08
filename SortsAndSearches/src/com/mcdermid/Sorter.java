@@ -176,12 +176,12 @@ public class Sorter<T> {
         }
     }
 
-    public static void sort(int[] arr, int l, int r) {
+    public static void mergeSort(int[] arr, int l, int r) {
         if (l < r) {
             int mid = l + (r - 1) / 2;
 
-            sort(arr, l, mid);
-            sort(arr, mid + 1, r);
+            mergeSort(arr, l, mid);
+            mergeSort(arr, mid + 1, r);
 
             //yes, I realise I've written myself into what's probably a little extra work, but it's good practice,
             //no?
@@ -194,12 +194,12 @@ public class Sorter<T> {
         }
     }
 
-    public static void sort(char[] arr, int l, int r) {
+    public static void mergeSort(char[] arr, int l, int r) {
         if (l < r) {
             int mid = l + (r - 1) / 2;
 
-            sort(arr, l, mid);
-            sort(arr, mid + 1, r);
+            mergeSort(arr, l, mid);
+            mergeSort(arr, mid + 1, r);
 
             // conversion oneliner from https://stackoverflow.com/a/27690990/7327253
             merge(arr.toString().chars().mapToObj(c -> (char)c).toArray(Character[]::new),
@@ -211,12 +211,12 @@ public class Sorter<T> {
         }
     }
 
-    public static void sort(double[] arr, int l, int r) {
+    public static void mergeSort(double[] arr, int l, int r) {
         if (l < r) {
             int mid = l + (r - 1) / 2;
 
-            sort(arr, l, mid);
-            sort(arr, mid + 1, r);
+            mergeSort(arr, l, mid);
+            mergeSort(arr, mid + 1, r);
 
 
             merge(Arrays.stream(arr).boxed().toArray(Double[]::new), l, mid, r, new Comparator<Double>() {
@@ -227,12 +227,12 @@ public class Sorter<T> {
         }
     }
 
-    public static void sort(String[] arr, int l, int r) {
+    public static void mergeSort(String[] arr, int l, int r) {
         if (l < r) {
             int mid = l + (r - 1) / 2;
 
-            sort(arr, l, mid);
-            sort(arr, mid + 1, r);
+            mergeSort(arr, l, mid);
+            mergeSort(arr, mid + 1, r);
 
             //so much simpler because it's already an Object
             merge(arr, l, mid, r, new Comparator<String> () {
